@@ -1,0 +1,17 @@
+Timings for gettimings program:
+
+
+./gettimings 1 outputs: Time elasped for empty function is: 10.11 nano seconds
+
+./gettimings 2 outputs: Time elasped for getppid() function is: 497.73 nano seconds
+
+./gettimings 3 outputs: Time elasped for system("/bin/true"): 2617804.94 nano seconds
+
+./gettimings 4 outputs: Time elasped for sending signal and have handler start executing: 3677.28 nano seconds
+
+./gettimings -1 and ./gettimings 5 outputs: Time elasped for sending a signal to another process, then having that process's signal handler send a signal back: 12086.75 ns
+
+Calculations and Notes: 
+* all calculations were done inside the gettimings.c file
+* all output timings are in nano seconds
+* within gettimings.c, time_diff refers to "measurement overhead" and is a fixed value calculated at the beginning. It is offset in all timings outputted by the program.
